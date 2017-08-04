@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Http } from '@angular/http';
+import { Observable } from 'rxjs';
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  latestItems: Array<any>;
+
+  constructor(private http:Http){
+    this.http.get('https://jsonplaceholder.typicode.com/photos')
+      .map(response => response.json())
+      .subscribe(res => this.latestItems = res);
+  }
 }
