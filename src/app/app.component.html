@@ -1,29 +1,16 @@
 <md-sidenav-container class="app-container">
-  <app-sidebar></app-sidebar>
-  
-  <md-toolbar color="primary">
-    <span>{{ title }}</span>
-
-    <!-- This fills the remaining space of the current row -->
-    <span class="example-fill-remaining-space"></span>
-    <button type="button" md-button (click)="openSidebar()"><md-icon>menu</md-icon></button>
-
-  </md-toolbar>
+  <md-sidenav #sidenav class="app-sidenav">
+    <md-list>
+      <md-list-item>Item 1</md-list-item>
+      <md-list-item>Item 2</md-list-item>
+      <md-list-item>Item 3</md-list-item>
+    </md-list>
+  </md-sidenav>
 
   <div class="app-sidenav-content">
-    
-    <md-card class="example-card" *ngFor="let data of (latestItems ? latestItems.slice(0,10):[]); let i = index">
-      <img md-card-image src="{{ data.url }}">
-      <md-card-header>
-        <md-card-title>{{ data.title }}</md-card-title>
-      </md-card-header>
-      <md-card-actions>
-        <button md-button>Like</button>
-        <button md-button>Share</button>
-      </md-card-actions>
-    </md-card>
+    <button type="button" md-button (click)="sidenav.open()">
+      Open sidenav
+    </button>
   </div>
-  
-</md-sidenav-container>
 
-  
+</md-sidenav-container>

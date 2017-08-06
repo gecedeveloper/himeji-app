@@ -3,7 +3,6 @@ import { Http } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/Rx';
 
-import { SidebarComponent } from './sidebar/sidebar.component';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +12,6 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 export class AppComponent implements OnInit{
   title = "Himeji";
 
-  @ViewChild(SidebarComponent) sidebar: SidebarComponent;
 
   latestItems: Array<any>;
 
@@ -21,10 +19,6 @@ export class AppComponent implements OnInit{
     this.http.get('https://jsonplaceholder.typicode.com/photos')
       .map(response => response.json())
       .subscribe(res => this.latestItems = res);
-  }
-
-  openSidebar(){
-    this.sidebar.openSidebar();
   }
 
   ngOnInit() {
