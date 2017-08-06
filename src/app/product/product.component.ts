@@ -15,12 +15,9 @@ export class ProductComponent implements OnInit {
     http.get('https://himeji-api.herokuapp.com/items')
       .map(response => response.json())
       .subscribe(res => this.products = res);
+      console.log(this.products);
   } 
   
-  ngOnInit() {
-  
-  }
-
-  
+  ngOnInit() {}
   
 }

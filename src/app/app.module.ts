@@ -10,6 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdButtonModule, MdToolbarModule, MdIconModule, MdSidenavModule, MdListModule, MdTabsModule, MdTableModule} from '@angular/material';
 import { ProductComponent } from './product/product.component';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { TableComponent } from './ui/table/table.component';
+import { CdkTableModule } from '@angular/cdk'
 
 const appRoutes:Routes = [
   {
@@ -26,7 +28,8 @@ const appRoutes:Routes = [
   declarations: [
     AppComponent,
     ProductComponent,
-    InvoiceComponent
+    InvoiceComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ const appRoutes:Routes = [
     MdSidenavModule,
     MdListModule,
     MdTabsModule,
-    MdTableModule
+    MdTableModule,
+    CdkTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
