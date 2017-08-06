@@ -2,15 +2,16 @@
   <app-sidebar></app-sidebar>
   
   <md-toolbar color="primary">
-      <span>{{ title }}</span>
+    <span>{{ title }}</span>
 
-      <!-- This fills the remaining space of the current row -->
-      <span class="example-fill-remaining-space"></span>
-      <button type="button" md-button (click)="openSidebar()"><md-icon>menu</md-icon></button>
+    <!-- This fills the remaining space of the current row -->
+    <span class="example-fill-remaining-space"></span>
+    <button type="button" md-button (click)="openSidebar()"><md-icon>menu</md-icon></button>
 
-    </md-toolbar>
+  </md-toolbar>
 
   <div class="app-sidenav-content">
+    
     <md-card class="example-card" *ngFor="let data of (latestItems ? latestItems.slice(0,10):[]); let i = index">
       <img md-card-image src="{{ data.url }}">
       <md-card-header>

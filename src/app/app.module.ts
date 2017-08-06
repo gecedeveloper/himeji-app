@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MdSidenavModule} from '@angular/material';
+import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MdSidenavModule, MdListModule} from '@angular/material';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
@@ -24,7 +24,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     MdMenuModule,
     MdToolbarModule,
     MdIconModule,
-    MdSidenavModule
+    MdSidenavModule,
+    MdListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
