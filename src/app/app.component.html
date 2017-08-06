@@ -1,16 +1,25 @@
 <md-sidenav-container class="app-container">
   <md-sidenav #sidenav class="app-sidenav">
     <md-list>
-      <md-list-item>Item 1</md-list-item>
-      <md-list-item>Item 2</md-list-item>
-      <md-list-item>Item 3</md-list-item>
+      <md-list-item><a routerLink="/product">Product</a></md-list-item>
+      <md-list-item><a routerLink="/invoice">Invoice</a></md-list-item>
     </md-list>
   </md-sidenav>
+  <md-toolbar color="primary">
+    <span>{{ title }}</span>
 
-  <div class="app-sidenav-content">
-    <button type="button" md-button (click)="sidenav.open()">
-      Open sidenav
+    <!-- This fills the remaining space of the current row -->
+    <span class="example-fill-remaining-space"></span>
+
+    <button type="button" md-icon-button (click)="sidenav.open()">
+      <md-icon>menu</md-icon>
     </button>
+  </md-toolbar>
+  
+  <div class="app-sidenav-content">
+
+    <router-outlet></router-outlet>
+
   </div>
 
 </md-sidenav-container>

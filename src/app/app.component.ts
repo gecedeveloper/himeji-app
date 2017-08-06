@@ -1,5 +1,4 @@
-import { OnInit, Component, ViewChild } from '@angular/core';
-import { Http } from '@angular/http';
+import { OnInit, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import 'rxjs/Rx';
 
@@ -15,11 +14,7 @@ export class AppComponent implements OnInit{
 
   latestItems: Array<any>;
 
-  constructor(private http:Http){
-    this.http.get('https://jsonplaceholder.typicode.com/photos')
-      .map(response => response.json())
-      .subscribe(res => this.latestItems = res);
-  }
+  constructor(){}
 
   ngOnInit() {
 
